@@ -1,0 +1,21 @@
+.card {
+  width: 320px;
+}
+.card-title {
+  color: #3877ee;
+  font-family: Bebas Neue;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 30px */
+  text-transform: uppercase;
+}
+.card-text {
+  color: #42567a;
+  font-family: PT Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  margin-top: 15px;
+}
