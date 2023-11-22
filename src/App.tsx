@@ -12,6 +12,7 @@ import './App.css'
 import { Pagination, Navigation } from 'swiper/modules';
 import Card from './components/Card/Card';
 import sliderData from './data/SliderData';
+import Title from './components/Title/Title';
 const ITEMS_PER_PAGE = 8;
 interface SliderItem {
   id: number;
@@ -35,24 +36,10 @@ function App() {
   function leftSlider() {
     setCurrentPage(currentPage - 1);
   }
-  // const [count, setCount] = useState(0)
-  // const [data, setData] = useState(sliderData.slice(count, 8))
 
-  // const sliderlength = sliderData.length / 8
-  // function rightSlider() {
-  //   setCount((count) => count + 1)
-  //   setData(sliderData.slice(count * 8, count * 8 + 8))
-  // }
-  // function leftSlider() {
-  //   setCount((count) => count - 1)
-  //   setData(sliderData.slice(count * 8 - 8, count * 8))
-  // }
   return (
     <div className="container">
-      <div className="title-wrapper">
-        <img src="./images/line.svg" alt="line" />
-        <h1 className="title">Исторические даты</h1>
-      </div>
+      <Title />
       <svg className='circle-wrapper' width="530" height="530" viewBox="0 0 530 530" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle opacity="0.2" cx="265" cy="265" r="264" stroke="#42567A" />
         <circle cx="132" cy="36" r="3" fill="#42567A" />
@@ -65,7 +52,6 @@ function App() {
       <div className="years-wrapper">
         <h2 className='first-year'>{currentItems['0']?.year}</h2>
         <h2 className='second-year'>{currentItems[`${currentItems?.length - 1}`]?.year}</h2>
-
       </div>
       <div className="main-slider">
         <p className='main-slider-text'>0{currentPage}/06</p>
@@ -85,7 +71,15 @@ function App() {
         </div>
       </div>
       <Swiper
-        slidesPerView={3}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 3,
+          },
+
+        }}
         spaceBetween={80}
         navigation={true}
         modules={[Pagination, Navigation]}

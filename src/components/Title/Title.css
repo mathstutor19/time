@@ -1,0 +1,32 @@
+.title-wrapper {
+  display: flex;
+  gap: 78px;
+  margin-top: 170px;
+}
+.title {
+  position: relative;
+  width: 353px;
+  color: #42567a;
+  font-family: PT Sans;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 67.2px */
+}
+@media screen and (max-width: 1280px) {
+  .title-wrapper {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .title-wrapper {
+    width: 123px;
+    margin-top: 60px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .title-image {
+    display: none;
+  }
+}
